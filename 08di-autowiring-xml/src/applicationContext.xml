@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	
+	<bean id="objb" class="com.cluster.B"/>
+	
+	<!-- autowire="no" is the default value and explicit wiring should be done -->
+	<!-- 
+		<bean id="obja" class="com.cluster.A" autowire="no" >
+			<property name="b" ref="objb"/>
+		</bean> 
+	 -->	
+
+	<!-- autowire="byType" In this bean type and property type in bean class should be same. Setter injection will be used-->
+	<!-- <bean id="obja" class="com.cluster.A" autowire="byType" /> -->
+
+
+	<!-- autowire="constructor" In this bean type and parameter type of the constructor in the bean class should be same. Constructor injection will be used-->
+	<!-- <bean id="obja" class="com.cluster.A" autowire="constructor" /> -->
+
+	<!-- autowire="byName" In this bean name and property name in bean class should be same. Setter injection will be used-->
+	<!-- <bean id="obja" class="com.cluster.A" autowire="byName" /> -->
+	
+	
+	<!-- autowire="default" will do the autowiring for all the beans by using the value of default-autowire attribute of <beans> tag  --> 
+	<!-- <bean id="obja" class="com.cluster.A" autowire="default" /> -->
+
+</beans>

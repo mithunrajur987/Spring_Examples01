@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<aop:config>
+
+		<aop:pointcut id="pc" expression="execution(public * com.cluster.Juggler.*(..))" />
+		
+		<aop:aspect ref="ad">
+			<!-- 	<aop:before method="takeSeats" pointcut-ref="pc" /> 	-->
+	
+			<!-- 	<aop:after-returning method="applaud" pointcut-ref="pc" /> 	-->
+	
+			<!-- 	<aop:after-throwing method="demandRefund" pointcut-ref="pc" /> 	-->
+	
+			<!-- 	<aop:after method="walkOut" pointcut-ref="pc" /> 	-->
+	
+			<!-- 	<aop:around method="m1" pointcut-ref="pc" /> 	-->
+			
+		</aop:aspect>
+	</aop:config>
+
+	<bean id="ad" class="com.cluster.Audience" />
+
+	<bean id="jug" class="com.cluster.Juggler" />
+</beans>

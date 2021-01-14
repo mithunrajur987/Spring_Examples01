@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="per" class="com.cluster.Person">
+	
+		<property name="pid" value="101" />
+		<property name="name" value="Ravi" />
+
+		<property name="hobbies">
+			<list>
+				<value>Playing Chess</value>
+				<value>Reading Books</value>
+			</list>
+		</property>
+
+		<property name="emails">
+			<list>
+				<value>ravi@gmail.com</value>
+				<value>ravi@clusterindia.com</value>
+			</list>
+		</property>
+		
+		<property name="phones">
+			<set>
+				<value>1111111111</value>
+				<value>2222222222</value>
+			</set>
+		</property>
+
+		<property name="education">
+			<map>
+				<entry key="graduation" value="Engineering-IS" />
+				<entry key="postgraduation" value="M.Tech-IS" />
+			</map>
+		</property>
+		
+		<property name="percentage">
+			<props>
+				<prop key="Engg">88</prop>
+				<prop key="MTech">95</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
